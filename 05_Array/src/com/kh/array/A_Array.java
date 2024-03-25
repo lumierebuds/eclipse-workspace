@@ -232,5 +232,37 @@ public class A_Array {
 		for (char character : ch) {
 			System.out.print(character + "  ");
 		}
+
+		// str.toCharArray();
+	}
+
+	public void method7() {
+		// 1. 직접 배열의 길이를 입력한 후, 그 크기만큼의 정수배열을 선언
+		// 2. 반복문을 활용하여 0번 인덱스 ~ 마지막 인덱스 까지 순차적으로 값 대입
+		// (랜덤값 1~100 사이)
+		// 3. 반복문을 활용하여, 0~마지막 인덱스까지 배열에 담긴값을 출력함과 동시에,
+		// 4. 담긴값이 짝수인 경우 짝수의 총합 구하기.
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("배열의 길이를 입력해주세요: ");
+
+		int length = sc.nextInt();
+		int[] iArr = new int[length];
+
+		int sum = 0;
+
+		for (int i = 0; i < iArr.length; i++) {
+			int random = (int) (Math.random() * 100 + 1);
+			iArr[i] = random;
+		}
+
+		for (int i = 0; i < iArr.length; i++) {
+			System.out.print(iArr[i] + " ");
+			if (iArr[i] % 2 == 0) {
+				sum += iArr[i];
+			}
+		}
+		System.out.println("짝수의 합: " + sum);
+
 	}
 }
