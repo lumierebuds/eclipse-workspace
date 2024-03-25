@@ -252,17 +252,15 @@ public class A_Array {
 		int sum = 0;
 
 		for (int i = 0; i < iArr.length; i++) {
-			int random = (int) (Math.random() * 100 + 1);
-			iArr[i] = random;
-		}
 
-		for (int i = 0; i < iArr.length; i++) {
+			iArr[i] = (int) (Math.random() * 100 + 1);
 			System.out.print(iArr[i] + " ");
 			if (iArr[i] % 2 == 0) {
 				sum += iArr[i];
 			}
 		}
-		System.out.println("짝수의 합: " + sum);
+
+		System.out.println("\n짝수의 합: " + sum);
 
 	}
 }
