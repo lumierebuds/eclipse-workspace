@@ -7,7 +7,7 @@ public class Run {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayPractice ar = new ArrayPractice();
-		ar.practice3();
+		ar.practice6();
 	}
 
 }
