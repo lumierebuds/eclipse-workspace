@@ -92,6 +92,46 @@ public class DimensionPractice {
 			}
 		}
 
+		// 저장해둔 값을 더해 마지막에 0으로 초기화
+		for (int col = 0; col < 3; col++) {
+			for (int row = 0; row < 3; row++) {
+				sum += arr[row][col];
+			}
+			arr[3][col] = sum;
+			sum = 0;
+		}
+
+		// 저장해둔 값을 더해 마지막에 0으로 초기화
+		for (int row = 0; row < 3; row++) {
+			for (int col = 0; col < 3; col++) {
+				sum += arr[row][col];
+			}
+			arr[row][3] = sum;
+			sum = 0;
+		}
+
+		// 총합 구하기(행);
+		int rowSum = 0;
+
+		for (int col = 0; col < 3; col++) {
+			rowSum += arr[3][col];
+		}
+
+		int colSum = 0;
+
+		for (int row = 0; row < 3; row++) {
+			colSum += arr[row][3];
+		}
+
+		arr[3][3] = rowSum + colSum;
+
+		for (int row = 0; row < arr.length; row++) {
+			for (int col = 0; col < arr[row].length; col++) {
+				System.out.printf("%3d ", arr[row][col]);
+			}
+			System.out.println();
+		}
+
 	}
 
 	public void practice5() {
