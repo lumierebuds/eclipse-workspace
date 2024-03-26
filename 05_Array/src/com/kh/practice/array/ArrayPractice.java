@@ -119,8 +119,10 @@ public class ArrayPractice {
 	}
 
 	public void practice8() {
+
 		// 3이상인 홀수 자연수를 입력 받아 배열의 중간까지는
 		// 1부터 1씩 증가하여 오름차순으로 값을 넣고
+		// 중간 이후부터 끝까지 1씩 감소해 내림차순으로 값을 넣어 출력
 
 		boolean isOdd = false;
 		int num = 0; // 입력값을 받을 변수
@@ -135,13 +137,39 @@ public class ArrayPractice {
 			isOdd = true;
 		}
 
+		// 변수로 정리
+		int[] arr = new int[num];
+		int middle = (num / 2) + 1; // 배열의 중간지점
+		int value = 1;
+
+		// 1번) 방법
+		for (int i = 0; i < num; i++) {
+			arr[i] = value;
+			value += (i <= middle ? 1 : -1); // 3항 연산자를 활용해서 배열에 값을 넣어줌
+
+		}
+
+		// 2번) 방법
+		int value2 = 1;
+		for (int i = 0; i <= middle; i++) {
+			arr[i] = i + 1;
+			// arr[i] = value2++;
+		}
+
+		for (int i = middle + 1; i < num; i++) {
+			arr[i] = arr[i - 1];
+			// arr[i] = value2--;
+		}
+
+		/*
 		for (int i = 1; i <= (num / 2) + 1; i++) {
 			System.out.print(i + " , ");
 		}
-
+		
 		for (int j = (num / 2); j > 0; j--) {
 			System.out.print(j + ((j == 1) ? "" : " , "));
 		}
+		*/
 
 	}
 
