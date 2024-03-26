@@ -186,12 +186,12 @@ public class ArrayPractice {
 			if (menu[i].equals(chicken)) {
 				isTrue = false;
 				System.out.println(chicken + "치킨 배달 가능");
-				// return; // 메서드 종료시켜서 아래 출력이 안뜨게
+				// return; (메서드 종료시켜서 아래 출력이 안뜨게 할 수 있다.)
 			}
 
 		}
 
-		// 메뉴찾기 프로세스 이후 진행해야 될 사항이 있을때
+		// 메뉴찾기 프로세스 이후 진행해야 될 사항이 있을때 문장을 수행할 수 있게 해준다.
 		if (isTrue) {
 			System.out.println(chicken + "치킨은 없는 메뉴입니다.");
 		}
@@ -199,6 +199,7 @@ public class ArrayPractice {
 	}
 
 	public void practice10() {
+
 		System.out.print("주민등록번호(-포함) : ");
 		String str = sc.nextLine();
 		char[] origin = new char[str.length()];

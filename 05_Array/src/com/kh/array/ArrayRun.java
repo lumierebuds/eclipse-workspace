@@ -7,8 +7,11 @@ public class ArrayRun {
 		// A_Array aa = new A_Array();
 		// aa.method7();
 
-		B_ArrayCopy ba = new B_ArrayCopy();
-		ba.method5();
+		// B_ArrayCopy ba = new B_ArrayCopy();
+		// ba.method5();
+
+		C_DimencionalArray cd = new C_DimencionalArray();
+		cd.method4();
 
 	}
 
