@@ -1,5 +1,6 @@
 package com.kh.practice.array;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -196,4 +197,191 @@ public class ArrayPractice {
 		}
 
 	}
+
+	public void practice10() {
+		System.out.print("주민등록번호(-포함) : ");
+		String str = sc.nextLine();
+		char[] origin = new char[str.length()];
+		char[] copy = new char[origin.length];
+
+		for (int i = 0; i < str.length(); i++) {
+			origin[i] = str.charAt(i);
+		}
+
+		for (int i = 0; i < copy.length; i++) {
+			if (i >= 8) {
+				copy[i] = '*';
+				continue;
+			}
+			copy[i] = origin[i];
+		}
+
+		for (char ch : copy) {
+			System.out.print(ch);
+		}
+
+	}
+
+	public void practice11() {
+		int[] arr = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			int num = (int) (Math.random() * 10 + 1);
+			arr[i] = num;
+			System.out.print(arr[i] + " ");
+		}
+	}
+
+	public void practice12() {
+
+		int[] arr = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			int num = (int) (Math.random() * 10 + 1);
+			arr[i] = num;
+			System.out.print(arr[i] + " ");
+		}
+
+		System.out.println();
+		// 배열 전체 값과 그 값중에서 최대값과 최소값을 출력
+
+		// 최소값과 최대값을 저장하는 변수
+		int min = arr[0]; // 초기값을 0번째 요소로 줘서 이후 인덱스의 값과 비교를 해서 값을 넣음
+		int max = arr[0];
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] < min) {
+				min = arr[i];
+			} else if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+
+		System.out.println("최대값: " + max);
+		System.out.println("최소값: " + min);
+	}
+
+	public void practice13() {
+		int[] arr = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			// 0 ~ 9 인덱스까지
+
+			arr[i] = (int) (Math.random() * 10 + 1);
+			for (int j = 0; j < i; j++) {
+				if (arr[j] == arr[i]) {
+					i--; // 현재 위치에서 다시 랜덤값을 넣어준다.
+					break;
+				}
+			}
+		}
+
+		System.out.println(Arrays.toString(arr));
+		// [10, 3, 5, 5 ... 6, 7]
+	}
+
+	public void practice14() {
+
+		int[] arr = new int[6]; // (int) (Math.random() * 45 + 1)
+		int[] random = new int[45]; // [0, 0, 0, 0, ----,0];
+
+		for (int i = 0; i < arr.length;) {
+			int ran = (int) (Math.random() * 45 + 1);
+
+			if (random[ran - 1] == 0) {
+				arr[i] = ran;
+				random[ran - 1] = 1; // 사용중인 인덱스임을 확인_인덱스 번호를 통해 중복된 수를 확인
+				i++;
+			}
+		}
+
+		Arrays.sort(arr); // 오름차순 정렬 - "이를 응용해서 최소, 최대값을 출력할 수 있다.."
+		System.out.println(Arrays.toString(arr)); // 출력
+
+	}
+
+	public void practice15() {
+
+		System.out.print("문자열 : ");
+		String str = sc.nextLine(); // application 이라는 문자열로 가정
+
+		char[] origin = str.toCharArray(); // 문자열을 char 배열로 변환해주는 함수
+		// a p p l i c a t i o n
+		char[] copy = new char[origin.length];
+		// , , , , , , ... 아무런 값도 없는 상태
+		int copyIndex = 0;
+
+		for (int i = 0; i < origin.length; i++) {
+
+			copy[copyIndex] = origin[i];
+			for (int j = 0; j < copyIndex; j++) { // 값이 중복되었는지 확인한다.
+				if (copy[j] == origin[i] /* copy[i] */) { // 중복값 찾기 완료.
+					copyIndex--;
+					break;
+				}
+
+			}
+			// 중복값이 있는 경우 copy[i] 에는 값추가 x
+			copyIndex++;
+		}
+		System.out.println(Arrays.toString(copy));
+		int count = 0;
+
+		// 값 출력을 위한 반복문
+		System.out.print("문자열에 있는 문자 :");
+		for (int i = 0; i < copy.length; i++) {
+			if (copy[i] == '\0') {
+				continue;
+			}
+			System.out.print(copy[i] + ((i != copy.length - 1) ? ", " : ""));
+			count++;
+		}
+		System.out.println("\n문자 개수 : " + count);
+
+	}
+
+	public void practice16() {
+
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int size = sc.nextInt();
+		sc.nextLine(); // 개행 문자 제거
+		String[] str = new String[size];
+
+		for (int i = 0; i < str.length; i++) {
+			System.out.print((i + 1) + "번째 문자열 : ");
+			String word = sc.nextLine();
+			str[i] = word;
+		}
+
+		while (true) {
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.nextLine().charAt(0);
+			if (ch == 'y' || ch == 'Y') {
+				// 값을 더 추가할 수 있다.
+				System.out.print("더 입력하고 싶은 개수: ");
+				int moreSize = sc.nextInt();
+				sc.nextLine();
+
+				// 새로운 배열을 선언 - 원래 배열보다 더 입력하고 싶은 개수를 추가해 새로운 배열을 만든다.
+				String[] newStr = new String[str.length + moreSize];
+
+				// 새로운 배열에 깊은 복사해줌
+				for (int i = 0; i < str.length; i++) {
+					newStr[i] = str[i];
+				}
+
+				for (int i = str.length; i < newStr.length; i++) {
+					// if (newStr[i] != null) continue;
+					// 비어있는 인덱스 위치에서부터 값을 초기화
+					System.out.print((i + 1) + "번째 문자열 : ");
+					newStr[i] = sc.nextLine();
+				}
+				str = newStr; // 얕은 복사로 주소값을 이전해준다.
+
+			} else {
+				// 값을 출력
+				System.out.println(Arrays.toString(str));
+				break;
+			}
+		}
+
+	}
+
 }
