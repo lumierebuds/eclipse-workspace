@@ -264,7 +264,6 @@ public class ArrayPractice {
 		int[] arr = new int[10];
 		for (int i = 0; i < arr.length; i++) {
 			// 0 ~ 9 인덱스까지
-
 			arr[i] = (int) (Math.random() * 10 + 1);
 			for (int j = 0; j < i; j++) {
 				if (arr[j] == arr[i]) {
