@@ -511,4 +511,76 @@ public class DimensionPractice {
 		System.out.print("검색하신 " + student + " 학생은 " + 분단 + "분단 " + 줄 + " 번째 줄 " + 방향 + "에 있습니다.");
 	}
 
+	// [강사님 풀이]
+	public void practice10() {
+		// String 2차원 배열 6행 6열을 만들고
+
+		String[][] arr = new String[6][6];
+
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 6; j++) {
+				arr[i][j] = ""; // 배열의 모든 요소를 "빈문자열로 초기화"
+			}
+		}
+
+		for (int i = 1; i < 6; i++) {
+			arr[0][i] = i - 1 + ""; // (0,0) 을 제외해서 각각의 인덱스를 저장한다.
+			arr[i][0] = i - 1 + "";
+		}
+
+		System.out.print("행 인덱스 입력 : ");
+		int row = sc.nextInt();
+
+		System.out.print("열 인덱스 입력 : ");
+		int col = sc.nextInt();
+
+		arr[row + 1][col + 1] = "X";
+
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				System.out.printf("%2s", arr[i][j]);
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void practice11() {
+		// String 2차원 배열 6행 6열을 만들고
+
+		String[][] arr = new String[6][6];
+
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 6; j++) {
+				arr[i][j] = ""; // 배열의 모든 요소를 "빈문자열로 초기화"
+			}
+		}
+
+		for (int i = 1; i < 6; i++) {
+			arr[0][i] = i - 1 + ""; // (0,0) 을 제외해서 각각의 인덱스를 저장한다.
+			arr[i][0] = i - 1 + "";
+		}
+
+		while (true) {
+			System.out.print("행 인덱스 입력 : ");
+			int row = sc.nextInt();
+			if (row == 99) {
+				System.out.println("프로그램 종료");
+				break;
+			}
+			System.out.print("열 인덱스 입력 : ");
+			int col = sc.nextInt();
+
+			arr[row + 1][col + 1] = "X";
+
+			for (int i = 0; i < 6; i++) {
+				for (int j = 0; j < arr[i].length; j++) {
+					System.out.printf("%2s", arr[i][j]);
+				}
+				System.out.println();
+			}
+		}
+
+	}
+
 }

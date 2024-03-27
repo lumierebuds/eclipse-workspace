@@ -10,7 +10,7 @@ public class Run {
 		// ar.practice14();
 
 		DimensionPractice dm = new DimensionPractice();
-		dm.practice9();
+		dm.practice11();
 	}
 
 }
