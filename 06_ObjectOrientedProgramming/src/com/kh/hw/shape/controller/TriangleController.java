@@ -8,10 +8,16 @@ public class TriangleController {
 
 	// 넓이값 계산
 	public double calcArea(double height, double width) {
-		return (width * height) / 2;
+		s = new Shape(3, height, width);
+		return (s.getWidth() * s.getHeight()) / 2;
 	}
 
+	// 색깔 변경
 	public void paintColor(String color) {
-		System.out.println(s.information() + "\n모양 : " + s.getType());
+		s.setColor(color);
+	}
+
+	public String print() {
+		return "삼각형" + s.information();
 	}
 }

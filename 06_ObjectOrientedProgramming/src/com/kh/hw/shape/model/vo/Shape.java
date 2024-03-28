@@ -1,6 +1,7 @@
 package com.kh.hw.shape.model.vo;
 
 public class Shape {
+
 	private int type;
 	private double height;
 	private double width;
@@ -14,12 +15,6 @@ public class Shape {
 		this.type = type;
 		this.height = height;
 		this.width = width;
-
-	}
-	
-	public String information() {
-		return "높이: "+height+ "\n너비: "+ width
-				+"\n색깔: "+color;
 	}
 
 	public int getType() {
@@ -53,5 +48,8 @@ public class Shape {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	
+
+	public String information() {
+		return "높이: " + height + " 너비: " + width + " 색깔: " + color;
+	}
 }

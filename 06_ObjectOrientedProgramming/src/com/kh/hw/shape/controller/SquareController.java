@@ -8,19 +8,21 @@ public class SquareController {
 
 	// 둘레값 계산
 	public double calcPerimeter(double height, double width) {
-		return (width * 2) + (height * 2);
+		s = new Shape(4, height, width);
+		return (s.getWidth() * 2) + (s.getHeight() * 2);
 	}
 
 	// 넓이값 계산
 	public double calcArea(double height, double width) {
-		return width * height;
+		return s.getWidth() * s.getHeight();
 	}
 
+	// 색깔 변경
 	public void paintColor(String color) {
-
+		s.setColor(color);
 	}
 
 	public String print() {
-		return s.information() + "\n모양 : " + s.getType();
+		return "사각형" + s.information();
 	}
 }
