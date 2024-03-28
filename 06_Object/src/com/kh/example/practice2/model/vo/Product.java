@@ -10,6 +10,7 @@ public class Product {
 	}
 
 	public void information() {
-		System.out.println(this);
+		// System.out.println(this);
+		System.out.println(pName + ", " + price + ", " + brand);
 	}
 }

@@ -2,8 +2,8 @@ package com.kh.example.practice3.model.vo;
 
 public class Circle {
 
-	private double PI = 3.14;
-	private int radius = 1;
+	private static double PI = 3.14;
+	private static int radius = 1;
 
 	public Circle() {
 

@@ -2,7 +2,7 @@ package com.kh.example.practice4.model.vo;
 
 public class Student {
 
-	private int grade;
+	private static int grade;
 	private int classroom;
 	private String name;
 	private double height;
