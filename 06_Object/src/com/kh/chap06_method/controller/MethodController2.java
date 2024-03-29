@@ -3,7 +3,6 @@ package com.kh.chap06_method.controller;
 public class MethodController2 {
 
 	/*
-	 * 
 	 * static 메서드
 	 * 
 	 * 접근제한 static [예약어] 반환명 메서드명 ([매개변수]){

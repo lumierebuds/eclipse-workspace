@@ -8,7 +8,6 @@ public class Run {
 		// TODO Auto-generated method stub
 		ShapeMenu sm = new ShapeMenu();
 		sm.inputMenu();
-
 	}
 
 }

@@ -49,7 +49,15 @@ public class Shape {
 		this.color = color;
 	}
 
+	/*
 	public String information() {
 		return "높이: " + height + " 너비: " + width + " 색깔: " + color;
+	}
+	*/
+
+	// [강사님 코드]
+
+	public String information() {
+		return height + " " + width + " " + color;
 	}
 }
