@@ -41,6 +41,6 @@ public class Student {
 	}
 
 	public String inform() {
-		return name + ", " + subject + ", " + score;
+		return "이름 : " + name + " / 과목 : " + subject + " / 점수 : " + score;
 	}
 }

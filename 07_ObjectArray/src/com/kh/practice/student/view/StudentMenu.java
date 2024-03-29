@@ -13,7 +13,7 @@ public class StudentMenu {
 
 		Student[] sArr = ssm.printStudent();
 		for (Student std : sArr) {
-			System.out.printf("이름 : %s / 과목 : %s / 점수 : %d\n", std.getName(), std.getSubject(), std.getScore());
+			System.out.println(std.inform()); // Student 클래스의 inform 메서드로 반환된 정보
 		}
 
 		System.out.println();
@@ -27,11 +27,8 @@ public class StudentMenu {
 		System.out.println("========== 성적 결과 출력 ==========");
 
 		for (Student std : sArr) {
-			if (std.getScore() >= StudentController.CUT_LINE) {
-				System.out.println(std.getName() + " 학생은 통과입니다.");
-			} else {
-				System.out.println(std.getName() + " 학생은 재시험 대상입니다.");
-			}
+			String pass = (std.getScore() >= StudentController.CUT_LINE) ? "통과" : "재시험 대상";
+			System.out.printf("%s 학생은 %s입니다.\n", std.getName(), pass);
 		}
 	}
 }
