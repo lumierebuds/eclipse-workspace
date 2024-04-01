@@ -33,7 +33,7 @@ public class Rectangle extends Point {
 
 	@Override
 	public String toString() {
-		return getX() + ", " + getY() + ", " + getHeight() + ", " + getWidth() + "/ ";
+		return getX() + ", " + getY() + ", " + getHeight() + ", " + getWidth() + " / ";
 	}
 
 }

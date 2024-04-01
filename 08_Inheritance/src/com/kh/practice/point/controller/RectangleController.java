@@ -11,7 +11,7 @@ public class RectangleController {
 		r.setY(y);
 		r.setHeight(height);
 		r.setWidth(width);
-		double area = x * y;
+		double area = height * width;
 		return "면적: " + r.toString() + area;
 
 	}
@@ -21,7 +21,7 @@ public class RectangleController {
 		r.setY(y);
 		r.setHeight(height);
 		r.setWidth(width);
-		double perimeter = 2 * (x + y);
-		return "면적: " + r.toString() + perimeter;
+		double perimeter = 2 * (height + width);
+		return "둘레: " + r.toString() + perimeter;
 	}
 }
