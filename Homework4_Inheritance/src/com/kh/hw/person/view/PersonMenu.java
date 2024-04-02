@@ -48,64 +48,68 @@ public class PersonMenu {
 	}
 
 	public void studentMenu() {
-		int personNum = pc.PersonCount()[0];
-		if (personNum != 3) {
-			System.out.println("1. 학생 추가");
-		} else {
-			System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가 메뉴는 더 이상 활성화 되지 않습니다.");
-		}
-
-		System.out.println("2. 학생 보기");
-		System.out.println("9. 메인으로");
-		System.out.print("메뉴 번호 :");
-		int menuNum = sc.nextInt();
-		sc.nextLine(); // 개행문자 날림
-
-		switch (menuNum) {
-		case 2:
-			printStudent();
-			break;
-		case 9:
-			System.out.println("메인으로 돌아갑니다.");
-			return;
-		case 1:
+		while (true) {
+			int personNum = pc.PersonCount()[0];
 			if (personNum != 3) {
-				insertStudent();
-				break;
+				System.out.println("1. 학생 추가");
+			} else {
+				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가 메뉴는 더 이상 활성화 되지 않습니다.");
 			}
-		default:
-			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+
+			System.out.println("2. 학생 보기");
+			System.out.println("9. 메인으로");
+			System.out.print("메뉴 번호 :");
+			int menuNum = sc.nextInt();
+			sc.nextLine(); // 개행문자 날림
+
+			switch (menuNum) {
+			case 2:
+				printStudent();
+				break;
+			case 9:
+				System.out.println("메인으로 돌아갑니다.");
+				return;
+			case 1:
+				if (personNum != 3) {
+					insertStudent();
+					break;
+				}
+			default:
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+			}
 		}
 	}
 
 	public void employeeMenu() {
-		int personNum = pc.PersonCount()[1];
-		if (personNum != 10) {
-			System.out.println("1. 사원 추가");
-		} else {
-			System.out.println("사원을 담을 수 있는 공간이 꽉 찼기 때문에 사원 추가 메뉴는 더 이상 활성화 되지 않습니다.");
-		}
-
-		System.out.println("2. 사원 보기");
-		System.out.println("9. 메인으로");
-		System.out.print("메뉴 번호 :");
-		int menuNum = sc.nextInt();
-		sc.nextLine();
-
-		switch (menuNum) {
-		case 2:
-			printEmployee();
-			break;
-		case 9:
-			System.out.println("메인으로 돌아갑니다.");
-			return;
-		case 1:
+		while (true) {
+			int personNum = pc.PersonCount()[1];
 			if (personNum != 10) {
-				insertEmployee();
-				break;
+				System.out.println("1. 사원 추가");
+			} else {
+				System.out.println("사원을 담을 수 있는 공간이 꽉 찼기 때문에 사원 추가 메뉴는 더 이상 활성화 되지 않습니다.");
 			}
-		default:
-			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+
+			System.out.println("2. 사원 보기");
+			System.out.println("9. 메인으로");
+			System.out.print("메뉴 번호 :");
+			int menuNum = sc.nextInt();
+			sc.nextLine();
+
+			switch (menuNum) {
+			case 2:
+				printEmployee();
+				break;
+			case 9:
+				System.out.println("메인으로 돌아갑니다.");
+				return;
+			case 1:
+				if (personNum != 10) {
+					insertEmployee();
+					break;
+				}
+			default:
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+			}
 		}
 
 	}
@@ -128,9 +132,10 @@ public class PersonMenu {
 			System.out.print("학생 학년 : ");
 			int grade = sc.nextInt();
 
+			sc.nextLine();
+
 			System.out.print("학생 전공 : ");
 			String major = sc.nextLine();
-			sc.nextLine();
 
 			int studentNum = pc.PersonCount()[0];
 			if (studentNum == 3) {
@@ -177,9 +182,9 @@ public class PersonMenu {
 			System.out.print("사원 급여 : ");
 			int salary = sc.nextInt();
 
+			sc.nextLine();
 			System.out.print("사원 부서 : ");
 			String dept = sc.nextLine();
-			sc.nextLine();
 
 			int employeeNum = pc.PersonCount()[1];
 			if (employeeNum == 10) {
