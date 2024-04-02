@@ -156,6 +156,11 @@ public class PersonMenu {
 
 	public void printStudent() {
 		Student[] arr = pc.printStudent();
+		// null 값이 나올 수 있음
+		// PersonController에 존재하는 Student 배열의 주소를 참조하기때문에
+		// 캡슐화(정보은닉)원칙을 위배해 값이 변경될 수 있다. - printStudent() 에서 반환되는 배열을
+		// 깊은 복사로 변경해준다.
+
 		for (Student std : arr) {
 			if (std != null) {
 				System.out.println(std);
@@ -203,6 +208,7 @@ public class PersonMenu {
 	}
 
 	public void printEmployee() {
+
 		Employee[] arr = pc.printEmployee();
 		for (Employee emp : arr) {
 			if (emp != null) {
