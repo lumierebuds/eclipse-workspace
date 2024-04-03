@@ -81,12 +81,19 @@ public class LibraryMenu {
 	public void rentBook() {
 		System.out.println();
 		Book[] bList = lc.selectAll();
-		for (Book b : bList) {
-			System.out.println(b);
+		for (int i = 0; i < bList.length; i++) {
+			System.out.println(i + "번 도서 : " + bList[i]);
 		}
 		System.out.print("대여할 도서번호 : ");
 		int num = sc.nextInt();
 		sc.nextLine();
-
+		int result = lc.rentBook(num);
+		if (result == 0) {
+			System.out.println("성공적으로 대여되었습니다.");
+		} else if (result == 1) {
+			System.out.println("나이 제한으로 대여 불가능입니다.");
+		} else if (result == 2) {
+			System.out.println("성공적으로 대여되었습니다. 요리학원 쿠폰이 발급되었으니 마이페이지에서 확인하세요");
+		}
 	}
 }
