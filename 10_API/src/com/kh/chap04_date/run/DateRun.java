@@ -47,6 +47,7 @@ public class DateRun {
 	 * 특정일 기준으로 Calendar 객체 생성 
 	 * 
 	 */
+
 	public void test2() {
 		Calendar cal1 = Calendar.getInstance();
 		cal1.set(2024, 0, 1, 0, 0, 0); // 2024년 1월 1일 0시 0분 0초
