@@ -1,5 +1,7 @@
 package com.kh.chap02_byte.run;
 
+import com.kh.chap02_byte.model.dao.FileByteDao;
+
 public class Run {
 
 	public static void main(String[] args) {
@@ -16,5 +18,10 @@ public class Run {
 		 *  xxxOutputStream : xxx매체로 데이터를 출력 스트립(데이터를 쓰기(내보내기))
 		 * 
 		 */
+
+		FileByteDao fbd = new FileByteDao();
+		// fbd.fileSave();
+		fbd.fileRead();
+
 	}
 }
