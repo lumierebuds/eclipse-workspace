@@ -1,0 +1,7 @@
+create
+delete
+read
+update
+PATCH
+HEAD
+BODY
