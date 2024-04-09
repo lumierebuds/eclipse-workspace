@@ -50,7 +50,6 @@ public class MusicController {
 	public Music setMusic(String title, Music music) {
 		Music edit = null;
 		for (Music m : list) {
-
 			if (m.getTitle().equals(title)) {
 				edit = m;
 				list.set(list.indexOf(m), music);

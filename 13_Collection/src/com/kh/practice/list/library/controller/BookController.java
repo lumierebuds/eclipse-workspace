@@ -16,7 +16,6 @@ public class BookController {
 		list.add(new Book("쉽게 배우는 알고리즘", "문병로", "기타", 15000));
 		list.add(new Book("대화의 기술", "강보람", "인문", 17500));
 		list.add(new Book("암 정복기", "박신우", "의료", 21000));
-
 	}
 
 	public void insertBook(Book bk) {
