@@ -28,10 +28,14 @@ public class ArrayRun {
 		// 매개변수 있는 생성자(길이 5짜리 배열)
 		ArrayRun ar2 = new ArrayRun(5);
 
-		ar2.add(new Music("스물다섯스물하나", "자우림"));
-		ar2.add(new Music("스물다섯스물하나", "자우림"));
-		ar2.add(new Music("스물다섯스물하나", "자우림"));
-		ar2.add(new Music("스물다섯스물하나", "자우림")); // 3번 인덱스
+		ar2.add(new Music("스물다섯스물하나", "자우0"));
+		ar2.add(new Music("스물다섯스물하나", "자우1"));
+		ar2.add(new Music("스물다섯스물하나", "자우2"));
+		ar2.add(new Music("스물다섯스물하나", "자우3")); // 3번 인덱스
+		ar2.add(new Music("스물다섯스물하나", "자우4"));
+		ar2.add(new Music("스물다섯스물하나", "자우5"));
+		ar2.add(new Music("스물다섯스물하나", "자우6"));
+
 		ar2.add(3, new Music("스토커", "10cm"));
 		ar2.add(0, new Music("1월부터6월까지", "윤종신"));
 
@@ -59,6 +63,7 @@ public class ArrayRun {
 
 	// 배열의 index위치에 전달받은 Music m을 추가하는 함수
 	public void add(int index, Music m) { // 끼워넣기
+
 		// 1) 배열의 범위(size)를 벗어난 index 제시시?
 		// 출력문 : 저장가능한 인덱스 위치가 아닙니다.
 		if (index > size || index < 0) { // 초기화되지 않은 위치에 값을 추가하거나, 음수를 제시하는 경우
@@ -72,19 +77,22 @@ public class ArrayRun {
 		}
 
 		// 3) index위치에 값을 저장시 이미 값이 들어가 있다면 한칸씩 뒤로 밀어줘야함.
-		// [1,2,3,4,5] => 3번 인덱스에 10이라는 값을 넣고 싶다?
-
-		// [1,2,3,4,5,0]
+		// [1,2,3,4,5] => '3번' 인덱스에 10이라는 값을 넣고 싶다?
 		// [1,2,3,10,4,5]
+
+		// [두가지 방법]
 		// 3_1) 반복문 활용하여 뒤로밀어주기
+		/*
 		for (int i = size; i > index; i--) {
 			mArr[i] = mArr[i - 1];
-
+		
 		}
+		*/
 		// [1,2,3,4,4,5]
 
-		// 3_2) 배열복사를 통한 뒤로 밀어주기
-		// System.arraycopy(원본배열, 원본에서 복사를 시작할 인덱스, 복사본배열, 본사본배열에서 복사될 인덱시, 복사할 갯수);
+		// 3_2) 배열복사를 통한 뒤로 밀어주기 -> 성능 상 해당 방식이 더 좋음 ✔✔
+		// System.arraycopy(원본배열, 원본에서 복사를 시작할 인덱스, 복사본배열, 본사본배열에 붙여넣기를 시작할 첫번째 인덱스, 복사할
+		// 갯수);
 
 		// [1,2,3,4,5,0]
 		System.arraycopy(mArr, index, mArr, index + 1, size - index);
