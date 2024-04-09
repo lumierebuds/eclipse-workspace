@@ -63,12 +63,20 @@ public class Music implements Comparable<Object> {
 	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
 
+		/*
 		int result = 0;
 		if (o instanceof Music) {
 			result = ((Music) o).singer.compareTo(this.singer);
 		}
+		
+		return result; 
+		*/
 
-		return result;
+		// [강사님 코드]
+		Music m = (Music) o;
+
+		return m.singer.compareTo(this.singer);
+
 	}
 
 }

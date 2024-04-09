@@ -1,6 +1,5 @@
 package com.kh.practice.list.music.view;
 
-import java.util.List;
 import java.util.Scanner;
 
 import com.kh.practice.list.music.controller.MusicController;
@@ -104,6 +103,7 @@ public class MusicView {
 
 	public void printAll() {
 		System.out.println("****** 전체 곡 목록 출력 ******");
+		/*
 		List musicList = mc.printAll();
 		// MusicController에 printAll() 반환 값을 출력한다.
 		System.out.print("[");
@@ -114,6 +114,9 @@ public class MusicView {
 			}
 		}
 		System.out.print("]\n");
+		*/ // 사실 굳이 이렇게 안해도 된다..
+
+		System.out.println(mc.printAll());
 
 	}
 
@@ -160,15 +163,15 @@ public class MusicView {
 		System.out.print("수정할 곡명 : ");
 		String newTitle = sc.nextLine();
 
-		System.out.println("수정할 가수 명 : ");
+		System.out.print("수정할 가수 명 : ");
 		String newSinger = sc.nextLine();
 
-		Music setMusic = mc.setMusic(title, new Music(newTitle, newSinger));
-		if (setMusic == null) {
+		Music m = mc.setMusic(title, new Music(newTitle, newSinger));
+		if (m == null) {
 			System.out.println("수정할 곡이 없습니다.");
 			return;
 		}
-		System.out.println(setMusic + "의 값이 변경 되었습니다.");
+		System.out.println(m + "의 값이 변경 되었습니다.");
 
 		// 사용자에게 수정할 곡을 입력 하여 MusicController에 setMusic으로 검색 할 수 있게
 		// 값을 넘기며 수정할 곡 명과 가수 명을 받아 setMusic으로 값을 넘긴다.
