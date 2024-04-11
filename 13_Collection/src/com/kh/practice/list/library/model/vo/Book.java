@@ -64,6 +64,7 @@ public class Book implements Comparable<Book> {
 	public int compareTo(Book o) {
 		// TODO Auto-generated method stub
 		int result = this.title.compareTo(o.title);
+
 		return result;
 	}
 

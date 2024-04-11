@@ -78,7 +78,7 @@ public class BookMenu {
 	public void selectList() {
 
 		ArrayList<Book> bookList = bc.selectList();
-		if (bookList.size() == 0) { // ArrayList 안에 아무것도 없을때
+		if (bookList.size() == 0) { // ArrayList 안에 아무것도 없을때 - isEmpty 함수도 가능
 			System.out.println("존재하는 도서가 없습니다.");
 			return; // 종료
 		}
