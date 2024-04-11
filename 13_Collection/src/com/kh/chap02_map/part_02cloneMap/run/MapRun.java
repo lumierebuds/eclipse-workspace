@@ -44,6 +44,9 @@ public class MapRun {
 		System.out.println(mr.get("포테"));
 		System.out.println(mr.get("까마"));
 		System.out.println(mr.containsKey("포테이토칩"));
+		mr.remove("칸쵸");
+		mr.remove("포테이토칩");
+		System.out.println(mr);
 	}
 
 	public int getIndex(String key) {
@@ -186,6 +189,23 @@ public class MapRun {
 		if (e.key.equals(key)) {
 			table[index] = null;
 		}
+
+		Entry pre = e;
+		do {
+			if (e.key.equals(key)) {
+				// 첫번째 entry 라면 / 아니라면 조건 필요
+				if (e == table[index]) { // 첫번째 entry
+					table[index] = (e.next == null) ? null : e.next.next;
+				} else {
+					pre.next = e.next;
+				}
+				size--;
+				break;
+			}
+			pre = e; // 이전값 보관
+			e = e.next;
+
+		} while (e != null);
 
 //		do {
 //			if (e.key.equals(key)) {
