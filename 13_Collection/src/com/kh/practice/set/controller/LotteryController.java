@@ -27,9 +27,7 @@ public class LotteryController {
 			// win에도 해당 추첨 대상자 삭제
 			win.remove(l);
 		}
-
 		return result;
-
 	}
 
 	public HashSet winObject() {
@@ -70,11 +68,11 @@ public class LotteryController {
 		// 2) Math.random()
 		for (int i = 0; i < 4; i++) {
 			// 인덱스를 이용해 win에 당첨자 저장
-			int randomIndex = (int) (Math.random() * list.size() - 1); // 0 <= x <= size-1
+			int randomIndex = (int) (Math.random() * list.size()); // 0 <= x <= size-1
 			Lottery l = list.get(randomIndex);
 
 			if (win.size() >= 4) {
-				break;
+				break; // 이미 당첨자 명단을 뽑았을때(즉, 4명이 전부 뽑혔을땐, 더 이상 명단을 뽑으면 안된다. 따라서 이후에 아래코드는 실행되지 않는다.)
 			}
 
 			boolean result = win.add(l);
@@ -100,7 +98,7 @@ public class LotteryController {
 
 		// TreeSet<Lottery> ts = new TreeSet(new SortedLottery()); // 메서드 클래스로 정렬기준 설정
 
-		TreeSet<Lottery> ts = new TreeSet(new Comparator<Lottery>() {
+		TreeSet<Lottery> ts = new TreeSet<>(new Comparator<Lottery>() {
 			@Override
 			public int compare(Lottery o1, Lottery o2) {
 				// TODO Auto-generated method stub
@@ -110,7 +108,6 @@ public class LotteryController {
 				}
 				return result;
 			} // 익명 클래스로 정렬기준 설정
-
 		});
 
 		ts.addAll(win);

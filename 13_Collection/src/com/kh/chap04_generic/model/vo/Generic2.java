@@ -4,12 +4,12 @@ package com.kh.chap04_generic.model.vo;
 // 제네릭의 extends는 클래스간의 상속의 개념이 아닌, 저장할 자료형을 “제한” 시키는데 사용한다.
 
 // <T extends Parent> : Parent 본인이나, Parent 클래스를 상속받은 자료형만 올 수 있다는 뜻.
-public class Generic2<T extends Parent> {
+public class Generic2<T /*extends Parent*/ > {
 
 	private T generic; // = new T(); 제네릭타입변수로는 객체생성불가.
 
 	public void printing() {
-		generic.doPrinting(); // Parent에 존재하는 doPrinting() 호출 가능
+		// generic.doPrinting(); // Parent에 존재하는 doPrinting() 호출 가능
 	}
 
 	public T getGeneric() {

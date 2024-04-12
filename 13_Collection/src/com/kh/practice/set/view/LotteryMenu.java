@@ -40,16 +40,14 @@ public class LotteryMenu {
 				break;
 			case 5:
 				searchWinner();
+				break;
 			case 9:
 				System.out.println("종료합니다.");
 				return;
 			default:
 				System.out.println("다시 입력해주세요.");
-
 			}
-
 		}
-
 	}
 
 	public void insertObject() {
@@ -58,10 +56,10 @@ public class LotteryMenu {
 		int count = Integer.parseInt(scanner.nextLine());
 
 		for (int i = 0; i < count; i++) {
-			System.out.println("이름 : ");
+			System.out.print("이름 : ");
 			String name = scanner.nextLine();
 
-			System.out.println("핸드폰 번호 : ");
+			System.out.print("핸드폰 번호 : ");
 			String phone = scanner.nextLine();
 
 			Lottery l = new Lottery(name, phone);
@@ -97,6 +95,7 @@ public class LotteryMenu {
 			System.out.println("삭제 완료 되었습니다.");
 			return;
 		}
+
 		System.out.println("존재하지 않는 대상입니다.");
 
 		// 받은 결과에 따라 true면 “삭제 완료 되었습니다.”,
