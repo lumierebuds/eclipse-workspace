@@ -2,21 +2,21 @@ package com.kh.chap02_map.part_02cloneMap.run;
 
 import com.kh.chap02_map.part_01hashMap.model.vo.Snack;
 
-public class MapRun {
+public class MapRun<K, V> {
 
-	class Entry {
-		String key;
-		Snack value;
+	class Entry<K, V> {
+		K key;
+		V value;
 		Entry next;
 
-		public Entry(String key, Snack value, Entry next) {
+		public Entry(K key, V value, Entry<K, V> next) {
 			this.key = key;
 			this.value = value;
 			this.next = next;
 		}
 	}
 
-	private Entry[] table;
+	private Entry<K, V>[] table;
 	private int capacity;
 	private int size;
 
@@ -49,7 +49,7 @@ public class MapRun {
 		System.out.println(mr);
 	}
 
-	public int getIndex(String key) {
+	public int getIndex(K key) {
 		// 매개변수로 전달받은 key값을 hashCode()로 변환시킨후
 		// 객체의 총 저장공간 수(capacity)만큼 나눈 결과값을 반환하는 함수.
 		// return key.hashCode() % capacity;
@@ -57,7 +57,7 @@ public class MapRun {
 		return Math.abs(key.hashCode()) % capacity;
 	}
 
-	public void put(String key, Snack value) {
+	public void put(K key, V value) {
 
 		// getIndex함수 호출후 반환값으로 table의 index에 접근
 		int index = getIndex(key);
@@ -101,7 +101,7 @@ public class MapRun {
 
 	}
 
-	public Snack get(String key) {
+	public Snack get(K key) {
 
 		// getIndex함수 호출후 반환값으로 table의 index에 접근
 		int index = getIndex(key);
@@ -115,7 +115,7 @@ public class MapRun {
 		// 객체가 있다면 저장된 객체의 key값과 매개변수로 전달받은 key값 확인
 		// 동일하다면 객체에 저장된 value값 반환.
 		if (e.key.equals(key)) {
-			return e.value;
+			return (Snack) e.value;
 		}
 
 		// 동일하지 않다면 노드드의 next 값을 찾아 다시한번 검사 (next가 존재하지
@@ -130,11 +130,11 @@ public class MapRun {
 			}
 		}
 
-		return e.value;
+		return (Snack) e.value;
 
 	}
 
-	public boolean containsKey(String key) {
+	public boolean containsKey(K key) {
 		// getIndex함수 호출후 반환값으로 table의 index에 접근
 		int index = getIndex(key);
 		Entry e = table[index];
@@ -175,7 +175,7 @@ public class MapRun {
 		// 찾을때까지 검사. 일치하는 값을 찾았다면 true/ 찾지 못했다다면 false 반환
 	}
 
-	public void remove(String key) {
+	public void remove(K key) {
 		// getIndex함수 호출후 반환값으로 table의 index에 접근
 		int index = getIndex(key);
 		Entry e = table[index];
