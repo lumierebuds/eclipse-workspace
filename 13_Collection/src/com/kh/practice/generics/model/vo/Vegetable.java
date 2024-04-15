@@ -9,8 +9,8 @@ public class Vegetable extends Farm {
 
 	}
 
-	public Vegetable(String name) {
-		super();
+	public Vegetable(String kind, String name) {
+		super(kind);
 		this.name = name;
 	}
 

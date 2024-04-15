@@ -3,6 +3,7 @@ package com.kh.practice.generics.model.vo;
 import java.util.Objects;
 
 public class Farm {
+
 	private String kind;
 
 	public Farm() {

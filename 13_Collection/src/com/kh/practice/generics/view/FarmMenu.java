@@ -2,6 +2,7 @@ package com.kh.practice.generics.view;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
@@ -131,16 +132,13 @@ public class FarmMenu {
 
 			switch (kind) {
 			case 1:
-				f = new Fruit(name);
-				f.setKind("과일");
+				f = new Fruit("과일", name);
 				break;
 			case 2:
-				f = new Vegetable(name);
-				f.setKind("채소");
+				f = new Vegetable("채소", name);
 				break;
 			case 3:
-				f = new Nut(name);
-				f.setKind("견과");
+				f = new Nut("견과", name);
 				break;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
@@ -174,16 +172,13 @@ public class FarmMenu {
 
 			switch (kind) {
 			case 1:
-				f = new Fruit(name);
-				f.setKind("과일");
+				f = new Fruit("과일", name);
 				break;
 			case 2:
-				f = new Vegetable(name);
-				f.setKind("채소");
+				f = new Vegetable("채소", name);
 				break;
 			case 3:
-				f = new Nut(name);
-				f.setKind("견과");
+				f = new Nut("견과", name);
 				break;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
@@ -221,16 +216,13 @@ public class FarmMenu {
 
 			switch (kind) {
 			case 1:
-				f = new Fruit(name);
-				f.setKind("과일");
+				f = new Fruit("과일", name);
 				break;
 			case 2:
-				f = new Vegetable(name);
-				f.setKind("채소");
+				f = new Vegetable("채소", name);
 				break;
 			case 3:
-				f = new Nut(name);
-				f.setKind("견과");
+				f = new Nut("견과", name);
 				break;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
@@ -257,19 +249,13 @@ public class FarmMenu {
 			Integer amount = entry.getValue();
 			System.out.println(farm + "(" + amount + "개)");
 		}
+		System.out.println();
 
 	}
 
 	// [소비자 메뉴]
 
 	public void buyFarm() {
-
-//		‘1. 과일 / 2. 채소 / 3. 견과’를 통해 번호로 종류를 받고 구매할 농산물의 이름도
-//		받음. 이때 없는 번호를 선택하면 “잘못 입력하셨습니다. 다시 입력해주세요.”가
-//		출력되며 다시 번호를 받고, 선택한 종류에 따라 생성되는 객체가 다름. 
-//		객체 안에 종류와 이름을 저장. 데이터를 저장한 객체를 fc의 buyFarm()로 넘기고
-//		전달받은 반환 값이 true면 “구매에 성공하였습니다.”,
-//		false면 “마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요.” 출력
 
 		Farm f = null;
 		String name; // null
@@ -286,16 +272,13 @@ public class FarmMenu {
 
 			switch (kind) {
 			case 1:
-				f = new Fruit(name);
-				f.setKind("과일");
+				f = new Fruit("과일", name);
 				break;
 			case 2:
-				f = new Vegetable(name);
-				f.setKind("채소");
+				f = new Vegetable("채소", name);
 				break;
 			case 3:
-				f = new Nut(name);
-				f.setKind("견과");
+				f = new Nut("견과", name);
 				break;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
@@ -307,18 +290,14 @@ public class FarmMenu {
 		boolean result = fc.buyFarm(f);
 		if (result) {
 			System.out.println("구매에 성공하였습니다.");
+			System.out.println("현재 KH마트 농산물 수량");
+			printFarm();
 			return;
 		}
 		System.out.println("구매에 실패하였습니다.");
 	}
 
 	public void removeFarm() {
-//		‘1. 과일 / 2. 채소 / 3. 견과’를 통해 번호로 종류를 받고 구매취소할 농산물의 이름도
-//		받음. 이때 없는 번호를 선택하면 “잘못 입력하셨습니다. 다시 입력해주세요.”가
-//		출력되며 다시 번호를 받고, 선택한 종류에 따라 생성되는 객체가 다름. 
-//		객체 안에 종류와 이름을 저장. 데이터 저장한 객체를 fc의 removeFarm()로 넘기고
-//		전달받은 반환 값이 true면 “구매 취소에 성공하였습니다.”,
-//		false면 “구매매 목록에 존재하지 않습니다. 다시 입력해주세요.” 출력
 
 		Farm f = null;
 		String name; // null
@@ -335,16 +314,13 @@ public class FarmMenu {
 
 			switch (kind) {
 			case 1:
-				f = new Fruit(name);
-				f.setKind("과일");
+				f = new Fruit("과일", name);
 				break;
 			case 2:
-				f = new Vegetable(name);
-				f.setKind("채소");
+				f = new Vegetable("채소", name);
 				break;
 			case 3:
-				f = new Nut(name);
-				f.setKind("견과");
+				f = new Nut("견과", name);
 				break;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
@@ -356,15 +332,25 @@ public class FarmMenu {
 		boolean result = fc.removeFarm(f);
 		if (result) {
 			System.out.println("구매 취소에 성공하였습니다.");
+			System.out.println("현재 KH마트 농산물 수량");
+			printFarm();
 			return;
 		}
 		System.out.println("구매 목록에 존재하지 않습니다.");
 	}
 
 	public void printBuyFarm() {
+		/*
 		ArrayList<Farm> list = fc.printBuyFarm();
 		for (Farm f : list) {
 			System.out.println(f);
+		}
+		*/
+		// [강사님 코드] - fc의 printBuyFarm()의 반환 값을 이용하여 Iterator를 통해 출력
+		ArrayList<Farm> list = fc.printBuyFarm();
+		Iterator<Farm> it = list.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
 		}
 	}
 

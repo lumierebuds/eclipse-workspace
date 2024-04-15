@@ -9,8 +9,8 @@ public class Nut extends Farm {
 
 	}
 
-	public Nut(String name) {
-		super();
+	public Nut(String kind, String name) {
+		super(kind);
 		this.name = name;
 	}
 
