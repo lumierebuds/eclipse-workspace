@@ -23,25 +23,29 @@ public class AlphabetThread {
 		 */
 
 		Thread upper = new Thread(new Runnable() {
+
 			@Override
 			public void run() {
-				System.out.println("[" + Thread.currentThread().getName() + "시작]");
+				String threadName = Thread.currentThread().getName();
+				System.out.println("[" + threadName + "시작]");
 				for (int i = 65; i < 91; i++) {
-					System.out.println("[" + Thread.currentThread().getName() + ": " + (char) i + "]");
+					System.out.println("[" + threadName + ": " + (char) i + "]");
 				}
-				System.out.println("[" + Thread.currentThread().getName() + "종료]");
+				System.out.println("[" + threadName + "종료]");
 			}
 
 		});
 
 		Thread lower = new Thread(new Runnable() {
+
 			@Override
 			public void run() {
-				System.out.println("[" + Thread.currentThread().getName() + "시작]");
+				String threadName = Thread.currentThread().getName();
+				System.out.println("[" + threadName + "시작]");
 				for (int i = 97; i < 123; i++) {
-					System.out.println("[" + Thread.currentThread().getName() + ": " + (char) i + "]");
+					System.out.println("[" + threadName + ": " + (char) i + "]");
 				}
-				System.out.println("[" + Thread.currentThread().getName() + "종료]");
+				System.out.println("[" + threadName + "종료]");
 			}
 		});
 
