@@ -24,7 +24,7 @@ public class Vegetable extends Farm {
 
 	@Override
 	public String toString() {
-		return "Vegetable [name=" + name + "]";
+		return "채소 : " + name;
 	}
 
 	@Override

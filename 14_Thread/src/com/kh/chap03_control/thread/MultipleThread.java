@@ -32,6 +32,7 @@ public class MultipleThread implements Runnable {
 		}
 		*/
 
+		// [강사님 코드]
 		for (int i = 1; number * i <= 100; i++) {
 			System.out.println("[" + threadName + "-" + (i * number) + "]");
 			try {

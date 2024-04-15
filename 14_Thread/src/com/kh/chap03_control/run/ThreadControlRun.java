@@ -44,9 +44,9 @@ public class ThreadControlRun {
 
 			if (ch == 'y') { // y를 입력시 a쓰레드 종료
 				break;
-
 			}
 		}
+
 		a.interrupt(); // 충돌시키다.
 		// b.start();
 

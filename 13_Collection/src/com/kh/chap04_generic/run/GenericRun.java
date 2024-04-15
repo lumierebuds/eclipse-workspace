@@ -25,7 +25,7 @@ public class GenericRun {
 		Generic<Integer, String> g2 = new Generic<>();
 		g2.setGe("10");
 		g2.setT(12);
-		System.out.println(g.test(1));
+		System.out.println(g2.test("30"));
 
 	}
 }

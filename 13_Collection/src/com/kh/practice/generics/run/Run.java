@@ -1,5 +1,9 @@
 package com.kh.practice.generics.run;
 
-public class Run {
+import com.kh.practice.generics.view.FarmMenu;
 
+public class Run {
+	public static void main(String[] args) {
+		new FarmMenu().mainMenu();
+	}
 }
