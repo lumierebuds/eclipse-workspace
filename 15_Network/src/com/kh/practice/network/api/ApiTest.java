@@ -26,6 +26,7 @@ public class ApiTest {
 		String line = null;
 
 		try {
+			/* API 사용시 언제나 요청데이터에 내용을 확인하기 */
 			requestUrl += "?serviceKey=" + URLEncoder.encode(serviceKey, "UTF-8");
 			requestUrl += "&stationName=" + URLEncoder.encode("종로구", "UTF-8");
 			requestUrl += "&dataTerm=DAILY";
