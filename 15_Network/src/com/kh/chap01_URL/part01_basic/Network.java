@@ -1,8 +1,14 @@
 package com.kh.chap01_URL.part01_basic;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.UnknownHostException;
 
 public class Network {
@@ -69,6 +75,56 @@ public class Network {
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+
+	}
+
+	public void urlConneciton() {
+		String address = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9D%B4%EC%8A%A4%EB%9D%BC%EC%97%98+%EC%9D%B4%EB%9E%80";
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+
+		/*
+		 * URLConnection : 원격서버와 통신하여 웹서버의 자원을 입력 할 수있는 스트림을 가진 클래스.
+		 * 				   URL로 연결함 서버 자원을 기술하고, URLConnection의 입력스트림을 통해 자원으로부터
+		 * 			 	   입출력이 가능함. 
+		 * 
+		 */
+
+		try {
+			URL url = new URL(address);
+			URLConnection conn = url.openConnection();
+
+			br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			// conn.inputSTream()으로 웹서버 자원과 연결.(스트림 생성)
+			// InputStreamReader : 바이트스트림으로 읽어들인 데이터를 문자로 바꿔주는 역할을 하는 "보조스트림"
+			// BufferedReader : 성능향상(빠른입력)을 위한 보조스트림.
+
+			bw = new BufferedWriter(new FileWriter("search_naver.html"));
+
+			String data = "";
+			while ((data = br.readLine()) != null) {
+				bw.write(data);
+				bw.newLine(); // \n 개행문자
+				System.out.println(data);
+			}
+
+			System.out.println("검색 완료");
+
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 	}
