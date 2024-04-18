@@ -48,7 +48,7 @@ public class Member {
 		private int age;
 		private int phone;
 
-		public Builder(String id) { // 생성자로 값을 넣어줌
+		public Builder(String id) { // 생성자로 값을 넣어준다. 필수 정보에 해당하는게 있을때 작성
 			this.id = id;
 		}
 

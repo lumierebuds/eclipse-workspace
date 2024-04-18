@@ -2,6 +2,7 @@ package com.kh.chap01_innerClass.run;
 
 import com.kh.chap01_innerClass.part01_instance.OuterClass;
 import com.kh.chap01_innerClass.part02_static.OuterClass2;
+import com.kh.chap01_innerClass.part02_static.OuterClass2.StaticInnerClass;
 import com.kh.chap01_innerClass.part02_static.mode.vo.KakaoUserInfoResponse;
 import com.kh.chap01_innerClass.part02_static.mode.vo.KakaoUserInfoResponse.KakaoAccount;
 import com.kh.chap01_innerClass.part02_static.mode.vo.Member;
@@ -24,10 +25,13 @@ public class Run {
 		 */
 
 		OuterClass oc = new OuterClass();
+		oc.outerMethod();
 		// oc.new Inner(); // Inner가 public이기 때문에 외부클래스에서 Inner생성자에 접근가능.
 		// System.out.println(OuterClass.Inner.sNum);
 
 		OuterClass2.StaticInnerClass.staticMethod();
+		StaticInnerClass staticInnerClass = new OuterClass2.StaticInnerClass();
+		staticInnerClass.method();
 
 		// 카카오 로그인 응답 구현
 		KakaoUserInfoResponse response = new KakaoUserInfoResponse();
@@ -53,8 +57,8 @@ public class Run {
 				.setAge(26)
 				.setPhone(1111)
 				.build());
-		
+
 		System.out.println(m);
-		
+
 	}
 }
