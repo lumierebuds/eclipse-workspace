@@ -23,9 +23,9 @@ import java.util.regex.Pattern;
  */
 public class WebCrawler {
 
-	// 웹 크롤링할 주소 : https://khedu.com.kr/project/team.kh
+	// 웹 크롤링할 주소 : https://khedu.co.kr/project/team.kh
 
-	// 주소에서 이미지들만 수집하는 크롤러
+	// [주소에서 이미지들만 수집하는 크롤러 메서드]
 	public void WebCrawling() {
 
 		// html 페이지 내에서 이미지는 <img src="이미지주소"> 식으로 생김
@@ -101,6 +101,7 @@ public class WebCrawler {
 
 	}
 
+	// [이미지 파일저장 메서드]
 	public void fileSave(List<String> imageList) {
 
 		for (String imagePath : imageList) {

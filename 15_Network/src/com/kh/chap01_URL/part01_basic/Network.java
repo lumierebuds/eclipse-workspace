@@ -24,6 +24,7 @@ public class Network {
 	 */
 
 	public void iNetTest() {
+
 		try {
 			InetAddress name = InetAddress.getByName("naver.com");
 			System.out.println(name.getHostAddress());
@@ -61,7 +62,9 @@ public class Network {
 	 *            
 	 * 자원경로 : 도메인상의 서버에서 실제로 자원이 존재하는 경로 
 	 */
+
 	public void urlTest() {
+
 		try {
 			URL url = new URL(
 					"https://www.queenspider.co.kr/product/detail.html?product_no=14981&cafe_mkt=nvs_hot01&NaPm=ct%3Dlv23201k%7Cci%3Deb5edf6637eb6eb9df8a98ac2dd229929511f405%7Ctr%3Dsbsh%7Csn%3D4576642%7Cic%3D%7Chk%3D4a6eef463f3d1ff73612ee1cbc4aa274d8906f1d");
