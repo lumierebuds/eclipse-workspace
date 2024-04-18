@@ -87,9 +87,9 @@ public class TCPServer {
 
 					System.out.println(++count + "번째 클라이언트가 접속됨");
 					System.out.println(client.getInetAddress().getHostAddress() + "가 보낸 메시지 : " + message);
+					System.out.println("연결된 클라이언트의 IP : " + client.getInetAddress().getHostAddress());
 					System.out.println("연결된 클라이언트의 PORT : " + client.getPort());
 					pw.println("클라이언트측으로부터 메시지 전달을 받았습니다."); // 한줄 단위로 값을 출력
-
 					// pw.flush();
 				}
 				pw.close();
