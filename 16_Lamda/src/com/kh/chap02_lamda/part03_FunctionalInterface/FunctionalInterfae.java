@@ -3,6 +3,7 @@ package com.kh.chap02_lamda.part03_FunctionalInterface;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.TreeSet;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -36,6 +37,7 @@ public class FunctionalInterfae {
 	 */
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		// 1. Runnable
 		Runnable r = () -> {
 			for (int i = 0; i < 10; i++) {
@@ -49,7 +51,7 @@ public class FunctionalInterfae {
 		System.out.println(supplier.get());
 
 		// 랜덤값을 추출하는 람다식
-		Supplier<Integer> random = () -> (int) Math.random() * 100 + 1; // 1~100 사이의 랜덥값.
+		Supplier<Integer> random = () -> (int) (Math.random() * 100 + 1); // 1~100 사이의 랜덥값.
 		Supplier<Integer> random2 = () -> new Random().nextInt(100) + 1; // 1~100 사이의 랜덤값
 
 		// 3. Consumer : 매개변수가 존재하고, 리턴값은 없는 람다식을 구현시 사용함.
@@ -117,6 +119,16 @@ public class FunctionalInterfae {
 		// 문제 3.환율계산기 : 원화값(정수)을 입력시 달러값(실수)를 리턴해주는 함수
 		// (1달러는 1400원 이라고 가정)
 		// 출력예시 : xxxx원은 달러로 xxxx.x$입니다.
+		// Function
+
+		Function<Integer, Double> exchange = (won) -> {
+			double dollar = (double) won / 1400; // 원화를 1400 원으로 나누면 현재환률로 변환된다.
+			System.out.print(won + "을 환전하면");
+			return dollar;
+		};
+
+		Double dollar = exchange.apply(500);
+		System.out.printf(" %.6f 달러입니다.", dollar);
 
 	}
 }
