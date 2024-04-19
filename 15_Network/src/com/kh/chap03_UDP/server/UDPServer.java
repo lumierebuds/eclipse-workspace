@@ -36,10 +36,6 @@ public class UDPServer {
 	 * - Packet ? 네트워크에서 데이터를 전송하는데 사용하는 단위. 네트워크상으로 전송하는 모든 데이터는
 	 * 			 패킷으로 나뉘어 전송됨. 패킷에는 데이터 전송에 필요한 제어정보(Header), 실제 전송되는
 	 * 			 데이터(Payload)가 포함되어 있음. 패킷은 목적지에 도달시 다시 사용가능한 데이터로 재조립된다.
-	 * 
-	 * 
-	 * 
-	 * 
 	 */
 
 	public static void main(String[] args) {

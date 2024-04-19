@@ -51,7 +51,7 @@ public class MethodReference {
 		// 2) String.equals() : s1.equals(s2)
 		BiFunction<String, String, Boolean> strEquals = String::equals;
 
-		// 3) 객체 메서드 참조
+		// 3) 객체 메서드 참조 - 스트링 참조형의 변수로 equals 호출
 		String title = "소나기";
 		// Predicate<String> equalsToTitle = s -> title.equals(s);
 		Predicate<String> equalsTotitle = title::equals;
@@ -97,15 +97,20 @@ public class MethodReference {
 				return new Person(name, age);
 			};
 		};
+		Person p1 = personConsrt3.apply("지훈").apply(30);
+		System.out.println(p1);
 
 		Function<String, Function<Integer, Person>> personConsrt4 = name -> age -> new Person(name, age);
+
+		Person p2 = personConsrt4.apply("Sophie").apply(25);
+		System.out.println(p2);
 
 		// 컬렉션 내부에 적용된 람다식들
 		List<Integer> list = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
 		System.out.println(list);
 
 		// 컬렉션 내부에서 특정요소를 삭제해주는 메서드
-		list.removeIf((n -> n % 2 == 0));
+		list.removeIf((n -> n % 2 == 0)); // 2 로 나누었을때 0일때 - 짝수일때 삭제
 		System.out.println(list);
 
 		// 컬렉션의 특정 요소를 변경

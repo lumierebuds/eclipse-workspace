@@ -94,8 +94,8 @@ public class Run {
 		List<Integer> list4 = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10); // 반환형 ArrayList Arrays 내부에서
 		// 구현한 정적 내부 클래스. 기존 ArrayList와는 달리 값의 추가,삭제 메서드가 구현되어 있지 않음.
 
-		// list4.add(1);
-		// list4.remove(0);
+		// list4.add(1); // 에러 발생
+		// list4.remove(0); // 에러발생
 		list4.set(0, 999); // 값의 추가, 삭제는 불가능하나 수정은 가능함. 기존 ArrayList와 비교해서 불변성을 추가함.
 
 		// 4) List.of(E ...elements) : List => 매개변수로 전달받은 값을 가지고 List 컬렉션을 반환
