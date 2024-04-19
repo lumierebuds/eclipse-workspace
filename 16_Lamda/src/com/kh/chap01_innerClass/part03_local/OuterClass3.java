@@ -19,4 +19,37 @@ public class OuterClass3 {
 	 * 							상수메모리내부에 상수풀 존재
 	 * 
 	 */
+
+	private String outerSter = "외부클래스 필드";
+	private static String staticOuterStr = "외부클래스 스태틱변수";
+
+	// 반환형이 Runnable인 getRunnable 메서드
+	public Runnable getRunnable(int num) {
+
+		int local = 1; // 지역변수
+		int notUsed = 4;
+		notUsed = 5; // 사용안하고 있으면 수정가능
+
+		// 지역내부클래스 : 지역변수와 동일한 생명주기를 가졌다.
+		class LocalInner implements Runnable {
+
+			int localInnerNum = 10;
+
+			@Override
+			public void run() {
+
+				// 지역내부클래스에서 지역 변수 사용은 가능. 단 상수로 취급해버림.
+				System.out.println(local);
+				// local = 3; // 값의 수정이 불가능.
+				System.out.println(num);
+				System.out.println(localInnerNum);
+				System.out.println(outerSter);
+				System.out.println(staticOuterStr);
+
+			}
+		}
+
+		return new LocalInner(); // Runnable 타입의 지역내부클래스를 반환
+	}
+
 }
