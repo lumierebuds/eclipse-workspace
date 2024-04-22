@@ -78,19 +78,19 @@ public class FileByteDao {
 			// 2. 스트림을 통해 데이터 읽어오기
 			// 1byte 단위로 읽어온다.
 
+			/*
 			System.out.println(fis.read()); // 97
 			System.out.println(fis.read()); // 112
 			System.out.println(fis.read()); // 112
 			System.out.println(fis.read()); // 108
 			System.out.println(fis.read()); // 101
 			System.out.println(fis.read()); // 파일 끝을 만난순간 -1반환
+			*/
 
-			/*
 			int value = 0;
 			while ((value = fis.read()) != -1) {
-				System.out.println((char) value);
+				System.out.print((char) value);
 			}
-			*/
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

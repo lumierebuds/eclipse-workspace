@@ -62,11 +62,11 @@ public class FileRun {
 			File file2 = new File("C:/aaa/test.txt");
 			file2.createNewFile();
 
-			// 3. 폴더 생성하기.
+			// 3. 폴더 생성하기. mkdir
 			File folder1 = new File("C:/bbb");
 			folder1.mkdir();
 
-			// 4. 폴더 생성하기(여러개)
+			// 4. 폴더 생성하기(여러개) mkdirs
 			File folder2 = new File("C:/ccc/ddd/eee");
 			folder2.mkdirs();
 
@@ -75,6 +75,7 @@ public class FileRun {
 			if (!dir.exists()) {
 				dir.mkdirs(); // 디렉토리가 존재하지 않는다면 디렉토리 생성
 			}
+
 			File newFile = new File("C:/fff/ggg/person.txt");
 			newFile.createNewFile();
 			// newFile.delete(); // 파일 삭제
