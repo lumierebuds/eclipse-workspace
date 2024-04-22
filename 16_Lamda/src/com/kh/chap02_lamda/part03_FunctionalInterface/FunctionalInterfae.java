@@ -105,7 +105,7 @@ public class FunctionalInterfae {
 		Supplier<TreeSet<Integer>> lottery = () -> {
 			TreeSet<Integer> set = new TreeSet<>();
 			for (int i = 0; i < 6; i++) {
-				int num = (int) (Math.random() * 45 + 1);
+				int num = (int) (Math.random() * 45 + 1); // new Random().nextInt(45) +1 도 가능
 				boolean result = set.add(num);
 				if (!result)
 					--i;
@@ -123,12 +123,12 @@ public class FunctionalInterfae {
 
 		Function<Integer, Double> exchange = (won) -> {
 			double dollar = (double) won / 1400; // 원화를 1400 원으로 나누면 현재환률로 변환된다.
-			System.out.print(won + "을 환전하면");
 			return dollar;
 		};
 
-		Double dollar = exchange.apply(500);
-		System.out.printf(" %.6f 달러입니다.", dollar);
+		int won = 500;
+		Double dollar = exchange.apply(won);
+		System.out.printf("%d원을 환전하면 %.6f$입니다.", won, dollar);
 
 	}
 }
