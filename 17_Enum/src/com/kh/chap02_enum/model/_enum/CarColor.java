@@ -43,7 +43,7 @@ public enum CarColor {
 				.orElse(null);
 	}
 	
-	// 상수값마다 고유한 메서드(기능)부여하기 
+	// 상수값마다 고유한 메서드(기능)부여하기 - 익명 클래스로 메서드를 정의한다.
 	
 	public abstract void printTest(); 
 

@@ -32,6 +32,7 @@ public class ConstantTest {
 		Car car1 = new Car();
 		car1.setName("테슬라");
 		car1.setCarColor(CarColor.BLACK);
+		System.out.println(car1.getCarColor());
 
 		Dress dress1 = new Dress();
 		dress1.setName("외투");
